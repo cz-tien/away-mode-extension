@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Away Mode",
+  "version": "0.1.0",
+  "description": "Review and move Amazon Subscribe & Save deliveries around days away from home.",
+  "minimum_chrome_version": "116",
+  "permissions": ["storage", "sidePanel"],
+  "host_permissions": ["https://www.amazon.com/*"],
+  "action": {"default_title": "Open Away Mode"},
+  "background": {"service_worker": "background.js", "type": "module"},
+  "side_panel": {"default_path": "panel/index.html"},
+  "content_scripts": [{"matches": ["https://www.amazon.com/auto-deliveries*"], "js": ["content.js"], "run_at": "document_idle"}],
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'none'"}
+}

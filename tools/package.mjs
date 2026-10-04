@@ -1,0 +1,10 @@
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
+const {version} = JSON.parse(await readFile('package.json','utf8'));
+await mkdir('artifacts',{recursive:true});
+const path = `artifacts/away-mode-${version}.zip`;
+execFileSync('zip',['-qr',`../${path}`,'.'],{cwd:'dist'});
+const hash = createHash('sha256').update(await readFile(path)).digest('hex');
+await writeFile(`${path}.sha256`,`${hash}  away-mode-${version}.zip\n`);
+console.log(path);

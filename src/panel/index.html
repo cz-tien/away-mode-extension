@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Away Mode</title><link rel="stylesheet" href="panel.css"></head>
+<body><header><div class="eyebrow">AMAZON · SUBSCRIBE & SAVE</div><h1>Away Mode</h1><p>Home again before your packages.</p></header>
+<main>
+<section><h2>Days away</h2><p class="hint">Both dates are days you cannot receive packages. Return deliveries start the following day.</p><div id="windows"></div>
+<form id="add"><label>From<input id="start" type="date" required></label><label>Through<input id="end" type="date" required></label><button>Add dates</button></form></section>
+<section><h2>Check your deliveries</h2><button id="scan">Check deliveries</button><label>Home destination<select id="destination"><option value="">Scan to find destinations</option></select></label><p class="hint">Destination fingerprints keep your address out of saved data. Match the destination in the Amazon tab.</p><div id="coverage"></div><button id="plan">Review proposed moves</button></section>
+<section><h2>Review</h2><p class="hint">Each move affects the whole group and only its next delivery. Ordinary orders are not checked.</p><div id="plan-list"></div><button id="apply" class="primary">Apply all selected changes</button><button id="stop">Stop before the next change</button></section>
+<section><h2>Results</h2><div id="results"></div><button id="reconcile">Reconcile interrupted results</button></section>
+<section class="settings"><h2>Your data</h2><button id="export">Export settings</button><label class="file">Import settings<input id="import" type="file" accept="application/json,.json"></label><button id="clear">Clear local data</button><p class="hint">Stored on this device. No monitoring when Chrome is closed.</p></section>
+</main><footer><p id="status" role="status" aria-live="polite"></p><p id="error" role="alert"></p></footer><script src="panel.js"></script></body></html>

@@ -1,0 +1,22 @@
+{
+  "name": "away-mode-extension",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node tools/build.mjs --watch",
+    "build": "node tools/build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run tests/core tests/adapters",
+    "test:integration": "vitest run tests/integration",
+    "package": "npm run build && node tools/package.mjs"
+  },
+  "devDependencies": {
+    "@types/chrome": "0.3.4",
+    "@types/node": "22.19.15",
+    "esbuild": "0.28.2",
+    "jsdom": "30.1.2",
+    "typescript": "5.9.3",
+    "vitest": "5.0.3"
+  }
+}
